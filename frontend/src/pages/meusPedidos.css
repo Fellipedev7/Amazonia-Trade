@@ -1,0 +1,243 @@
+/* frontend/src/pages/MeusPedidos.css */
+
+.meus-pedidos-container {
+  max-width: 1200px; /* Para não ficar muito largo em telas grandes */
+  margin: 0 auto; /* Centraliza o contêiner */
+  padding: 25px;
+  background-color: #f4f1ea; /* Tom de bege claro, terroso, consistente */
+  color: #4a3e36; /* Marrom escuro para texto principal */
+  min-height: 100vh;
+  font-family: 'Arial', Helvetica, sans-serif;
+}
+
+.meus-pedidos-page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+  padding-bottom: 15px;
+  border-bottom: 2px solid #4C7B4E; /* Linha verde abaixo do título */
+}
+
+.meus-pedidos-page-header h1 {
+  color: #2c5c3a; /* Verde escuro da identidade visual */
+  font-size: 2.5em;
+  margin: 0; /* Remove margem padrão do h1 */
+}
+
+.btn-home-pedidos {
+  background-color: #38761d; /* Verde médio */
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1em;
+  font-weight: bold;
+  text-decoration: none; /* Caso use Link */
+  transition: background-color 0.3s ease;
+}
+
+.btn-home-pedidos:hover {
+  background-color: #2c5c3a; /* Verde mais escuro */
+}
+
+.loading-message,
+.error-message,
+.empty-pedidos-message {
+  text-align: center;
+  padding: 40px 20px;
+  font-size: 1.2em;
+  color: #4a3e36;
+}
+
+.error-message a,
+.empty-pedidos-message .continue-shopping-button-pedidos {
+  color: #38761d;
+  font-weight: bold;
+  text-decoration: none;
+  display: inline-block;
+  margin-top: 15px;
+  padding: 10px 15px;
+  background-color: #e8f5e9;
+  border: 1px solid #38761d;
+  border-radius: 6px;
+}
+.empty-pedidos-message .continue-shopping-button-pedidos:hover {
+  background-color: #dcedc8;
+}
+
+
+.pedidos-section {
+  margin-bottom: 40px;
+}
+
+.pedidos-section h2 {
+  color: #4C7B4E; /* Verde dos títulos de seção */
+  margin-bottom: 20px;
+  font-size: 1.8em;
+  border-bottom: 1px solid #d9c4b0; /* Linha sutil abaixo do título da seção */
+  padding-bottom: 10px;
+}
+
+.pedidos-grid { /* Alterado de pedidos-lista para usar grid */
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Grid responsivo */
+  gap: 25px; /* Espaçamento entre os cards */
+}
+
+.pedido-card {
+  background-color: #ffffff;
+  border: 1px solid #d9c4b0; /* Borda marrom clara */
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column; /* Organiza o conteúdo do card verticalmente */
+  transition: box-shadow 0.3s ease;
+}
+
+.pedido-card:hover {
+  box-shadow: 0 6px 16px rgba(0,0,0,0.12);
+}
+
+.pedido-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.pedido-card-header h3 {
+  margin: 0;
+  font-size: 1.2em;
+  color: #2c5c3a; /* Título do pedido em verde escuro */
+}
+
+.status-tag {
+  font-size: 0.8em;
+  padding: 4px 8px;
+  border-radius: 12px;
+  font-weight: bold;
+  color: white;
+}
+.status-em-processamento, .status-a-caminho {
+  background-color: #e67e22; /* Laranja para status em andamento */
+}
+.status-entregue, .status-finalizado {
+  background-color: #2ecc71; /* Verde para status finalizado */
+}
+
+.pedido-data {
+  font-size: 0.85em;
+  color: #777;
+  margin-bottom: 15px;
+}
+
+.pedido-produtos-lista-scroll {
+  max-height: 150px; /* Altura máxima para a lista de produtos, com scroll se necessário */
+  overflow-y: auto;
+  margin-bottom: 15px;
+  padding-right: 10px; /* Espaço para a barra de rolagem */
+  border-top: 1px dashed #eee;
+  border-bottom: 1px dashed #eee;
+  padding-top: 10px;
+  padding-bottom: 5px;
+}
+
+.pedido-produto-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  font-size: 0.9em;
+}
+
+.produto-imagem-pequena { /* AJUSTE DA IMAGEM AQUI */
+  width: 50px;  /* Tamanho pequeno para a miniatura */
+  height: 50px;
+  object-fit: cover; /* Garante que a imagem cubra o espaço sem distorcer */
+  border-radius: 6px;
+  margin-right: 10px;
+  border: 1px solid #eee;
+}
+
+.produto-info {
+  display: flex;
+  flex-direction: column;
+}
+.produto-nome {
+  font-weight: bold;
+  color: #555;
+}
+.produto-qtd-preco {
+  font-size: 0.9em;
+  color: #666;
+}
+
+
+.pedido-card-footer {
+  margin-top: auto; /* Empurra o rodapé do card para baixo */
+  padding-top: 15px;
+  border-top: 1px solid #eee;
+}
+
+.pedido-card-footer p {
+  margin: 5px 0;
+  font-size: 0.9em;
+  color: #444;
+}
+.pedido-card-footer p strong {
+  color: #222;
+}
+
+.btn-confirmar-entrega,
+.btn-avaliar-pedido {
+  background-color: #4C7B4E; /* Verde da identidade */
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.9em;
+  font-weight: bold;
+  margin-top: 15px;
+  width: 100%; /* Ocupa a largura toda do rodapé do card */
+  transition: background-color 0.3s ease;
+}
+
+.btn-confirmar-entrega:hover,
+.btn-avaliar-pedido:hover {
+  background-color: #3a5d3c; /* Verde mais escuro */
+}
+
+.btn-avaliar-pedido {
+  background-color: #5c8f5e; /* Um tom de verde ligeiramente diferente para "Avaliar" */
+}
+.btn-avaliar-pedido:hover {
+  background-color: #4a7c59;
+}
+
+/* Responsividade para o grid de pedidos */
+@media (max-width: 992px) {
+  .pedidos-grid {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  }
+}
+
+@media (max-width: 600px) {
+  .meus-pedidos-page-header {
+    flex-direction: column;
+    gap: 15px;
+  }
+  .meus-pedidos-page-header h1 {
+    font-size: 2em;
+  }
+  .pedidos-grid {
+    grid-template-columns: 1fr; /* Uma coluna em telas bem pequenas */
+  }
+  .pedido-card-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5px;
+  }
+}

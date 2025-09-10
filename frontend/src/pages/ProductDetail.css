@@ -1,0 +1,228 @@
+/* frontend/src/pages/ProductDetail.css */
+.product-detail-page {
+  max-width: 1200px;
+  margin: 20px auto;
+  padding: 20px;
+  font-family: 'Arial', sans-serif;
+  background-color: #fff; /* Fundo branco para a página de detalhe */
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+.product-detail-loading,
+.product-detail-error {
+  text-align: center;
+  font-size: 1.5em;
+  padding: 50px;
+  color: #2c5c3a;
+}
+.product-detail-error a {
+    color: #38761d;
+    display: block;
+    margin-top: 15px;
+}
+
+.back-button {
+  background-color: #f4f1ea; /* Bege claro */
+  color: #38761d; /* Verde médio */
+  border: 1px solid #d9c4b0; /* Borda sutil */
+  padding: 8px 15px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.9em;
+  font-weight: bold;
+  margin-bottom: 25px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.back-button:hover {
+  background-color: #e8f5e9; /* Verde bem claro */
+  color: #2c5c3a;
+}
+
+.product-detail-container {
+  display: flex;
+  flex-wrap: wrap; /* Para responsividade */
+  gap: 30px; /* Espaço entre a seção da imagem e a seção de informações */
+  margin-bottom: 40px;
+}
+
+.product-image-section {
+  flex: 1; /* Ocupa uma parte do espaço */
+  min-width: 300px; /* Largura mínima */
+  max-width: 500px; /* Evita que a imagem fique excessivamente grande */
+  margin: 0 auto; /* Centraliza se for a única coluna em telas pequenas */
+}
+
+.product-main-image {
+  width: 100%;
+  height: auto; /* Mantém a proporção */
+  max-height: 500px; /* Altura máxima */
+  object-fit: contain; /* Mostra a imagem inteira, pode ter barras se proporção não bater */
+  border-radius: 8px;
+  border: 1px solid #eee;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.product-info-section {
+  flex: 1.5; /* Ocupa mais espaço que a imagem */
+  min-width: 300px;
+  display: flex;
+  flex-direction: column;
+}
+
+.product-title {
+  font-size: 2.4em;
+  color: #2c5c3a; /* Verde escuro AmazôniaTrade */
+  margin-top: 0;
+  margin-bottom: 10px;
+  line-height: 1.2;
+}
+
+.product-seller {
+  font-size: 1em;
+  color: #555;
+  margin-bottom: 15px;
+}
+.seller-name {
+  font-weight: 600;
+  color: #38761d; /* Verde médio */
+}
+
+.product-price-rating {
+  display: flex;
+  align-items: center;
+  gap: 20px; /* Espaço entre preço e avaliação */
+  margin-bottom: 20px;
+}
+
+.product-price {
+  font-size: 2em;
+  font-weight: bold;
+  color: #e67e22; /* Laranja para o preço, destaque */
+  margin: 0;
+}
+
+.product-overall-rating {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 0.9em;
+  color: #777;
+}
+
+.product-description-title {
+  font-size: 1.2em;
+  font-weight: 600;
+  color: #333;
+  margin-top: 20px;
+  margin-bottom: 8px;
+}
+
+.product-description-text {
+  font-size: 1em;
+  line-height: 1.7;
+  color: #555;
+  margin-bottom: 25px;
+  white-space: pre-wrap; /* Preserva quebras de linha e espaços da descrição */
+}
+
+.add-to-cart-button {
+  background-color: #4CAF50; /* Verde vibrante */
+  color: white;
+  border: none;
+  padding: 15px 25px;
+  font-size: 1.1em;
+  font-weight: bold;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  width: 100%; /* Ou max-width se preferir */
+  max-width: 300px; /* Limita a largura do botão */
+}
+
+.add-to-cart-button:hover {
+  background-color: #388E3C; /* Verde mais escuro */
+}
+
+/* Seção de Avaliações */
+.product-reviews-section {
+  margin-top: 40px;
+  padding-top: 30px;
+  border-top: 1px solid #e0e0e0;
+}
+
+.product-reviews-section h2 {
+  font-size: 1.8em;
+  color: #2c5c3a;
+  margin-bottom: 25px;
+  text-align: center;
+}
+
+.review-card {
+  background-color: #f9f9f9; /* Fundo levemente diferente para cada avaliação */
+  border: 1px solid #ececec;
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.review-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.review-author {
+  font-weight: bold;
+  color: #333;
+}
+
+.review-date {
+  font-size: 0.85em;
+  color: #777;
+}
+
+.star-rating {
+  margin-bottom: 10px;
+}
+
+.star {
+  font-size: 1.3em; /* Tamanho das estrelas */
+  cursor: default; /* Remove cursor de texto */
+}
+
+.star.filled {
+  color: #ffc107; /* Amarelo para estrela preenchida */
+}
+
+.star.empty {
+  color: #e0e0e0; /* Cinza claro para estrela vazia */
+}
+
+.review-comment {
+  font-size: 0.95em;
+  line-height: 1.6;
+  color: #555;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .product-detail-container {
+    flex-direction: column; /* Empilha imagem e info em telas menores */
+  }
+  .product-image-section,
+  .product-info-section {
+    max-width: 100%; /* Permite ocupar a largura total da coluna */
+  }
+  .product-title {
+    font-size: 2em;
+  }
+  .product-price {
+    font-size: 1.8em;
+  }
+  .add-to-cart-button {
+    max-width: 100%; /* Botão ocupa toda a largura disponível */
+  }
+}

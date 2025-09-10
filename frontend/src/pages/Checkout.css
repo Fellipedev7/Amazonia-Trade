@@ -1,0 +1,288 @@
+/* frontend/src/pages/Checkout.css */
+.checkout-page {
+  background-color: #f4f1ea; /* Fundo consistente com outras páginas */
+  padding: 20px 0; /* Padding vertical na página, sem padding horizontal para o container ocupar tudo */
+  min-height: 100vh;
+  font-family: 'Arial', sans-serif;
+}
+
+.checkout-container {
+  max-width: 1100px; /* Largura máxima para o conteúdo do checkout */
+  margin: 20px auto;
+  padding: 30px;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.checkout-header {
+  text-align: center;
+  margin-bottom: 30px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.checkout-logo {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  margin-bottom: 10px;
+}
+
+.checkout-header h1 {
+  color: #2c5c3a; /* Verde escuro AmazôniaTrade */
+  font-size: 2.2em;
+  margin: 0;
+}
+
+.checkout-content-wrapper {
+  display: flex;
+  flex-wrap: wrap; /* Permite que as colunas quebrem em telas menores */
+  gap: 30px; /* Espaço entre as colunas */
+}
+
+.checkout-form-section {
+  flex: 2; /* Ocupa mais espaço, ex: 60-66% */
+  min-width: 300px; /* Largura mínima para o formulário */
+  order: 1; /* Ordem padrão */
+}
+
+.checkout-order-summary {
+  flex: 1; /* Ocupa menos espaço, ex: 33-40% */
+  background-color: #f9f9f9; /* Fundo levemente diferente para o sumário */
+  padding: 25px;
+  border-radius: 8px;
+  border: 1px solid #e7e7e7;
+  min-width: 280px; /* Largura mínima */
+  align-self: flex-start; /* Alinha ao topo */
+  order: 2; /* Ordem padrão */
+}
+
+.checkout-order-summary h3 {
+  color: #2c5c3a;
+  margin-top: 0;
+  margin-bottom: 20px;
+  font-size: 1.5em;
+  text-align: center;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #ddd;
+}
+
+.summary-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+  padding-bottom: 15px;
+  border-bottom: 1px dashed #eee;
+}
+.summary-item:last-child {
+  border-bottom: none;
+  margin-bottom: 20px;
+}
+
+.summary-item-image {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 4px;
+  margin-right: 15px;
+}
+
+.summary-item-details {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.summary-item-name {
+  font-weight: 600;
+  color: #333;
+  font-size: 0.95em;
+}
+
+.summary-item-price {
+  font-size: 0.9em;
+  color: #555;
+  text-align: right;
+}
+
+.summary-total {
+  display: flex;
+  justify-content: space-between;
+  font-size: 1.2em;
+  font-weight: bold;
+  color: #2c5c3a;
+  padding-top: 15px;
+  border-top: 2px solid #2c5c3a;
+}
+.total-amount {
+    font-size: 1.3em;
+}
+
+
+.checkout-form fieldset {
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 25px;
+}
+
+.checkout-form legend {
+  font-size: 1.3em;
+  font-weight: 600;
+  color: #38761d; /* Verde médio */
+  padding: 0 10px;
+}
+
+.form-row {
+    display: flex;
+    gap: 15px; /* Espaço entre campos na mesma linha */
+}
+.form-group.half-width { flex: 1; }
+.form-group.one-third-width { flex: 1; }
+.form-group.two-thirds-width { flex: 2; }
+
+
+.checkout-form .form-group {
+  margin-bottom: 18px;
+}
+
+.checkout-form label {
+  display: block;
+  margin-bottom: 6px;
+  color: #444;
+  font-weight: 500;
+  font-size: 0.9em;
+}
+
+.checkout-form input[type="text"],
+.checkout-form input[type="number"], /* Para CEP, etc. */
+.checkout-form select {
+  width: 100%;
+  padding: 12px 15px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  box-sizing: border-box;
+  font-size: 1em;
+  color: #333;
+  background-color: #fff;
+}
+.checkout-form input[type="text"]:focus,
+.checkout-form input[type="number"]:focus,
+.checkout-form select:focus {
+  border-color: #4a7c59;
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(74, 124, 89, 0.2);
+}
+
+.accepted-cards {
+  margin-top: 10px;
+  font-size: 0.85em;
+  color: #666;
+}
+.card-flag {
+  display: inline-block;
+  padding: 2px 6px;
+  margin-right: 5px;
+  border: 1px solid #ddd;
+  border-radius: 3px;
+  background-color: #f0f0f0;
+  font-size: 0.9em;
+}
+
+.coupon-group {
+  display: flex;
+  gap: 10px;
+  align-items: stretch; /* Faz o input e o botão terem a mesma altura */
+}
+.coupon-group input {
+  flex-grow: 1; /* Input ocupa mais espaço */
+}
+.apply-coupon-button {
+  padding: 10px 15px;
+  background-color: #6c757d; /* Cinza para botão secundário */
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.9em;
+  white-space: nowrap; /* Evita quebra de linha */
+}
+.apply-coupon-button:hover {
+  background-color: #5a6268;
+}
+
+.checkout-error-message.form-level-error {
+    text-align: center;
+    margin-bottom: 20px;
+}
+.checkout-error-message {
+  background-color: #f8d7da;
+  color: #721c24;
+  border: 1px solid #f5c6cb;
+  padding: 10px;
+  border-radius: 6px;
+  font-size: 0.9em;
+}
+
+.checkout-confirm-button {
+  width: 100%;
+  background-color: #2c5c3a; /* Verde escuro AmazôniaTrade */
+  color: white;
+  padding: 15px;
+  font-size: 1.2em;
+  font-weight: bold;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 10px;
+}
+.checkout-confirm-button:hover:not(:disabled) {
+  background-color: #1e4228;
+}
+.checkout-confirm-button:disabled {
+  background-color: #9ead96;
+  cursor: not-allowed;
+}
+
+.back-to-cart-button-checkout {
+  display: block; /* Para ocupar a largura e permitir margem auto */
+  width: fit-content; /* Ajusta à largura do conteúdo */
+  margin: 20px auto 0 auto; /* Centraliza e adiciona margem superior */
+  background-color: transparent;
+  color: #38761d; /* Verde médio */
+  border: 1px solid #38761d;
+  padding: 10px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.95em;
+  text-align: center;
+}
+.back-to-cart-button-checkout:hover {
+  background-color: #e8f5e9;
+}
+
+
+/* Media query para telas menores */
+@media (max-width: 850px) {
+  .checkout-content-wrapper {
+    flex-direction: column;
+  }
+  .checkout-form-section {
+    order: 2; /* Formulário abaixo do sumário em telas menores */
+  }
+  .checkout-order-summary {
+    order: 1; /* Sumário acima do formulário */
+    margin-bottom: 30px; /* Espaço antes do formulário */
+  }
+  .form-row {
+    flex-direction: column; /* Empilha campos em linhas */
+    gap: 0; /* Remove gap para que a margem do form-group funcione */
+  }
+  .form-group.half-width,
+  .form-group.one-third-width,
+  .form-group.two-thirds-width {
+    flex-basis: auto; /* Reset flex-basis */
+  }
+}

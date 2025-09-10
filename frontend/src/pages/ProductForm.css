@@ -1,0 +1,213 @@
+/* frontend/src/components/ProductForm.css */
+
+.product-form-page {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start; /* Alinha no topo se o conteúdo for maior que a tela */
+  min-height: 100vh;
+  padding: 40px 20px;
+  background-color: #f4f1ea; /* Um tom de bege claro, terroso */
+  font-family: 'Arial', sans-serif; /* Mantenha consistente com o resto do site */
+}
+
+.product-form-container {
+  background-color: #ffffff;
+  padding: 30px 40px;
+  border-radius: 12px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 700px; /* Largura máxima do formulário */
+  text-align: center; /* Centraliza a logo e o título */
+}
+
+.form-logo {
+  width: 100px; /* Ajuste o tamanho conforme necessário */
+  height: 100px;
+  border-radius: 50%; /* Deixa a logo redonda */
+  margin-bottom: 20px;
+  object-fit: cover; /* Garante que a imagem cubra o espaço sem distorcer */
+  border: 3px solid #4a7c59; /* Borda verde escura na logo */
+}
+
+.product-form-container h2 {
+  color: #2c5c3a; /* Verde escuro para o título principal */
+  margin-bottom: 10px;
+  font-size: 2em;
+}
+
+.form-subtitle {
+  color: #555;
+  margin-bottom: 30px;
+  font-size: 1.1em;
+}
+
+.product-actual-form fieldset {
+  border: 1px solid #dcedc8; /* Borda verde clara para fieldsets */
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 25px;
+  text-align: left; /* Alinha labels e inputs à esquerda dentro do fieldset */
+}
+
+.product-actual-form legend {
+  font-size: 1.3em;
+  font-weight: bold;
+  color: #38761d; /* Verde médio para legendas */
+  padding: 0 10px;
+  margin-left: 10px; /* Pequeno ajuste para alinhar com o padding do fieldset */
+}
+
+.form-group {
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  color: #333;
+  font-weight: bold;
+  font-size: 0.95em;
+}
+
+.form-group input[type="text"],
+.form-group input[type="number"],
+.form-group textarea {
+  width: 100%;
+  padding: 12px 15px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  box-sizing: border-box; /* Garante que padding não aumente a largura total */
+  font-size: 1em;
+  color: #333;
+  transition: border-color 0.3s ease;
+}
+
+.form-group input[type="text"]:focus,
+.form-group input[type="number"]:focus,
+.form-group textarea:focus {
+  border-color: #4a7c59; /* Verde escuro ao focar */
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(74, 124, 89, 0.2);
+}
+
+.form-group textarea {
+  resize: vertical; /* Permite redimensionamento vertical */
+  min-height: 80px;
+}
+
+.file-upload-area {
+  margin-top: 25px;
+  margin-bottom: 30px;
+  text-align: center; /* Centraliza o botão de upload e o preview */
+}
+
+/* Estilo para o botão de upload de arquivo customizado */
+.file-upload-button {
+  display: inline-block;
+  padding: 15px 30px; /* Botão maior */
+  background-color: #4CAF50; /* Cor destaque - verde vibrante */
+  color: white;
+  font-size: 1.1em;
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  text-align: center;
+  border: none;
+}
+
+.file-upload-button:hover {
+  background-color: #388E3C; /* Verde um pouco mais escuro no hover */
+}
+
+/* Esconde o input de arquivo padrão */
+#image-upload-input {
+  display: none;
+}
+
+.image-preview-container {
+  margin-top: 20px;
+  text-align: center; /* Centraliza a imagem */
+}
+
+.image-preview {
+  max-width: 200px; /* Tamanho máximo do preview */
+  max-height: 200px;
+  border-radius: 8px;
+  border: 2px solid #dcedc8; /* Borda sutil no preview */
+  object-fit: cover;
+}
+
+.submit-button {
+  background-color: #2c5c3a; /* Verde escuro para o botão principal */
+  color: white;
+  padding: 15px 35px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.2em;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.1s ease;
+  width: 100%; /* Botão ocupa largura total */
+  margin-top: 10px;
+}
+
+.submit-button:hover {
+  background-color: #1e4228; /* Mais escuro no hover */
+  transform: translateY(-1px);
+}
+
+.submit-button:disabled {
+  background-color: #999;
+  cursor: not-allowed;
+}
+
+.form-message {
+  padding: 10px;
+  margin: 20px 0;
+  border-radius: 6px;
+  font-weight: bold;
+}
+
+.form-message.success {
+  background-color: #d4edda;
+  color: #155724;
+  border: 1px solid #c3e6cb;
+}
+
+.form-message.error {
+  background-color: #f8d7da;
+  color: #721c24;
+  border: 1px solid #f5c6cb;
+}
+
+.home-nav-button {
+  position: absolute; /* Posicionamento absoluto em relação ao ancestral posicionado mais próximo ou ao viewport */
+  top: 20px;          /* Distância do topo */
+  left: 20px;         /* Distância da esquerda */
+  padding: 10px 20px;
+  background-color: #2c5c3a; /* Mesmo verde escuro do botão de submit para consistência */
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 6px;
+  z-index: 100; /* Garante que fique por cima de outros elementos, se necessário */
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.home-nav-button:hover {
+  background-color: #1e4228; /* Verde mais escuro no hover */
+  transform: translateY(-1px); /* Leve efeito ao passar o mouse */
+}
+.product-form-page {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 100vh;
+  padding: 40px 20px;
+  background-color: #f4f1ea;
+  font-family: 'Arial', sans-serif;
+  position: relative;
+}

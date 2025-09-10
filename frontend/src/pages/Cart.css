@@ -1,0 +1,219 @@
+/* frontend/src/pages/Cart.css */
+
+/* Estilos existentes ... (mantenha seus estilos atuais) */
+
+.cart-container {
+  max-width: 1200px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  font-family: 'Arial', sans-serif;
+}
+
+.cart-header {
+  text-align: center;
+  margin-bottom: 30px;
+  color: #333;
+}
+
+.cart-header h1 {
+  font-size: 2em;
+  color: #2c5c3a; /* Verde escuro da identidade visual */
+}
+
+.empty-cart-message {
+  text-align: center;
+  padding: 40px 20px;
+  background-color: #fff;
+  border-radius: 8px;
+}
+
+.empty-cart-message p {
+  font-size: 1.2em;
+  margin-bottom: 20px;
+  color: #555;
+}
+
+/* Estilo para o botão "Continuar Comprando" (pode ser usado em ambos os casos) */
+.continue-shopping-button {
+  background-color: #4CAF50; /* Verde AmazôniaTrade */
+  color: white;
+  border: none;
+  padding: 12px 25px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 1em;
+  font-weight: bold;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.continue-shopping-button:hover {
+  background-color: #388E3C; /* Tom mais escuro de verde */
+}
+
+.cart-content {
+  display: flex;
+  flex-wrap: wrap; /* Permite que o summary vá para baixo em telas menores */
+  gap: 30px; /* Espaço entre a lista de itens e o sumário */
+}
+
+.cart-items-list {
+  flex: 2; /* Ocupa 2/3 do espaço */
+  min-width: 300px; /* Largura mínima para a lista de itens */
+}
+
+.cart-item-card {
+  display: flex;
+  align-items: center;
+  background-color: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 15px;
+  margin-bottom: 15px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+}
+
+.cart-item-image {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 6px;
+  margin-right: 15px;
+  border: 1px solid #eee;
+}
+
+.cart-item-details {
+  flex-grow: 1;
+}
+
+.cart-item-details h3 {
+  margin: 0 0 5px 0;
+  font-size: 1.1em;
+  color: #333;
+}
+
+.cart-item-price {
+  margin: 0;
+  font-size: 1em;
+  color: #2c5c3a; /* Verde escuro */
+  font-weight: bold;
+}
+
+.remove-item-button {
+  background-color: transparent;
+  color: #e74c3c; /* Vermelho para remover */
+  border: none;
+  font-size: 1.5em; /* Tamanho do 'x' */
+  font-weight: bold;
+  cursor: pointer;
+  padding: 5px 10px;
+  line-height: 1;
+  border-radius: 50%;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.remove-item-button:hover {
+  background-color: #fdeded;
+  color: #c0392b; /* Vermelho mais escuro */
+}
+
+.cart-summary {
+  flex: 1; /* Ocupa 1/3 do espaço */
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  border: 1px solid #e0e0e0;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+  min-width: 280px; /* Largura mínima para o sumário */
+  align-self: flex-start; /* Alinha o sumário no topo do seu espaço flex */
+}
+
+.cart-summary h2 {
+  text-align: center;
+  margin-top: 0;
+  margin-bottom: 20px;
+  color: #2c5c3a; /* Verde escuro */
+}
+
+.summary-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  font-size: 1em;
+}
+
+.summary-row span:first-child {
+  color: #555;
+}
+
+.summary-row span:last-child {
+  color: #333;
+  font-weight: bold;
+}
+
+.total-row {
+  font-size: 1.2em;
+  padding-top: 10px;
+  border-top: 1px solid #eee;
+  margin-top: 10px;
+}
+
+.total-row span:last-child {
+  color: #2c5c3a; /* Verde escuro para o total */
+}
+
+/* Estilos para os botões de ação no sumário */
+.cart-action-button {
+  width: 100%;
+  padding: 12px;
+  font-size: 1.1em;
+  font-weight: bold;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.1s ease;
+  border: none;
+  margin-top: 10px; /* Espaço entre os botões */
+}
+
+.checkout-button {
+  background-color: #2c5c3a; /* Verde escuro principal */
+  color: white;
+}
+
+.checkout-button:hover {
+  background-color: #1e4228; /* Mais escuro */
+  transform: translateY(-1px);
+}
+
+/* Estilo específico para o "Continuar Comprando" no sumário,
+   se quiser que ele seja diferente do botão de checkout.
+   Aqui, estou reutilizando .continue-shopping-button,
+   mas você pode criar .continue-shopping-button-alt se quiser outro visual.
+   Se for o mesmo estilo do .continue-shopping-button do carrinho vazio:
+*/
+.cart-summary .continue-shopping-button {
+  background-color: #f0f0f0; /* Cor mais neutra para ação secundária */
+  color: #333;
+  border: 1px solid #ccc;
+}
+
+.cart-summary .continue-shopping-button:hover {
+  background-color: #e0e0e0;
+  border-color: #bbb;
+}
+
+/* Ajuste para telas menores */
+@media (max-width: 768px) {
+  .cart-content {
+    flex-direction: column; /* Empilha a lista e o sumário */
+  }
+  .cart-items-list, .cart-summary {
+    flex: none; /* Remove a proporção flex para empilhamento */
+    width: 100%; /* Ocupa toda a largura */
+  }
+}
